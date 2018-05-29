@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+
+    <display-name>Examples Web Application</display-name>
+
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>ContextParam</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>HelloWorld</servlet-name>
+        <servlet-class>pl.sdaacademy.servlet.HelloWorldServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloWorld</servlet-name>
+        <url-pattern>/hello-world</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Params</servlet-name>
+        <servlet-class>pl.sdaacademy.servlet.ParametersServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>ServletParam</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Params</servlet-name>
+        <url-pattern>/params</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>TimeFilter</filter-name>
+        <filter-class>pl.sdaacademy.servlet.TimeFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>TimeFilter</filter-name>
+        <url-pattern>/hello-world-time</url-pattern>
+    </filter-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HelloWorld</servlet-name>
+        <url-pattern>/hello-world-time</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Counter</servlet-name>
+        <servlet-class>pl.sdaacademy.servlet.CounterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Counter</servlet-name>
+        <url-pattern>/counter</url-pattern>
+    </servlet-mapping>
+</web-app>
