@@ -11,7 +11,7 @@ import java.util.Enumeration;
 
 public class Servlet1 extends HttpServlet {
 
-    private ServletContext context;
+    public ServletContext context;
 
     @Override
     public void init() throws ServletException {
@@ -33,6 +33,7 @@ public class Servlet1 extends HttpServlet {
         context.setAttribute("pl.samouczekprogramisty.servlet1", "servlet1 attribute");
         String str = (String)context.getAttribute("pl.samouczekprogramisty.servlet1");
         writer.print(str);
+        context.setAttribute("name","ContextParam2");
 
 
 //        Enumeration<String> attributeNames = context.getAttributeNames();

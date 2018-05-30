@@ -13,7 +13,7 @@ import javax.servlet.ServletResponse;
 
 public class TimeFilter implements Filter {
 
-    private SimpleDateFormat simpleDateFormat;
+    public SimpleDateFormat simpleDateFormat;
 
     public void init(FilterConfig filterConfig) throws ServletException {
         String timeFormatParameter = filterConfig.getInitParameter("time-format");
