@@ -11,18 +11,18 @@ import java.util.Enumeration;
 
 public class Servlet1 extends HttpServlet {
 
-    public ServletContext context;
+    //public ServletContext context = this.getServletContext();
 
     @Override
     public void init() throws ServletException {
-        context = this.getServletContext();
+        //context = this.getServletContext();
     }
 
     @Override
     protected void doGet(HttpServletRequest req,
                          HttpServletResponse resp) throws ServletException, IOException {
 
-
+        ServletContext context = this.getServletContext();
 
 
         PrintWriter writer = resp.getWriter();
@@ -30,10 +30,10 @@ public class Servlet1 extends HttpServlet {
         writer.print("<html><body>");
 
 
-        context.setAttribute("pl.samouczekprogramisty.servlet1", "servlet1 attribute");
-        String str = (String)context.getAttribute("pl.samouczekprogramisty.servlet1");
+        context.setAttribute("name2", "ala");
+        String str = (String)context.getAttribute("name2");
         writer.print(str);
-        context.setAttribute("name","ContextParam2");
+
 
 
 //        Enumeration<String> attributeNames = context.getAttributeNames();

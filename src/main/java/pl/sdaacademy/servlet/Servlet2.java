@@ -11,20 +11,21 @@ import java.util.Arrays;
 import java.util.Map;
 
 public class Servlet2 extends HttpServlet {
-    private ServletContext context2;
+
 
 
     @Override
     public void init() throws ServletException {
 
-        context2 = this.getServletContext();
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter responseWriter = resp.getWriter();
+        ServletContext context2 = this.getServletContext();
 
-        String str = (String)context2.getAttribute("name");
+        String str = (String)context2 .getAttribute("name2");
         responseWriter.print(str);
 //        responseWriter.print("<htm><body>");
         Map<String,String[]> map = req.getParameterMap();
