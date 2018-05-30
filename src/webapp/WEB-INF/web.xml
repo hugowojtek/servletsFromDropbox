@@ -5,7 +5,7 @@
 
     <context-param>
         <param-name>name</param-name>
-        <param-value>ContextParam</param-value>
+        <param-value>WojtekOzog</param-value>
     </context-param>
 
     <servlet>

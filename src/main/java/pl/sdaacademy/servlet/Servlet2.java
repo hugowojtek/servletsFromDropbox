@@ -25,13 +25,18 @@ public class Servlet2 extends HttpServlet {
         PrintWriter responseWriter = resp.getWriter();
         ServletContext context2 = this.getServletContext();
 
-        String str = (String)context2 .getAttribute("name2");
+        String str = (String)context2.getAttribute("name2");
+
         responseWriter.print(str);
+
+        String str2 = (String)context2.getInitParameter("name");
+        responseWriter.print(str2);
+
 //        responseWriter.print("<htm><body>");
         Map<String,String[]> map = req.getParameterMap();
         for (Map.Entry entry: map.entrySet())
         {
-            responseWriter.write("<p>" + entry.getKey() + ": " + Arrays.toString((String[])entry.getValue()) +"</p>");
+            responseWriter.write("<p>" + entry.getKey() + ": " + Arrays.toString((String[])entry.getValue()) +"<p>");
         }
 
 

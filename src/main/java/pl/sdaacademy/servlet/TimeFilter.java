@@ -29,6 +29,8 @@ public class TimeFilter implements Filter {
             throws IOException, ServletException {
         servletResponse.getWriter().println(simpleDateFormat.format(new Date()));
 
+
+
         filterChain.doFilter(servletRequest, servletResponse);
     }
 
